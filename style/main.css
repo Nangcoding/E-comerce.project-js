@@ -1,33 +1,145 @@
 @import url('https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&family=Koh+Santepheap:wght@100;300;400;700;900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     font-family: "Roboto", sans-serif;
 }
-body{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    background: #f2f1f0;
-}
 
-.img{
+.logo {
     width: 140px;
     height: 140px;
-    /* border-radius: 50%; */
 }
 
-.head{
-    width: 100%;
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+    background-color: #e3e6f3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999%;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+#navbar {
     display: flex;
     justify-content: center;
     align-items: center;
-    justify-content: space-between;
 }
-.navbar{
-    margin-right: 300px;
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
 
 }
-.navbar a{
-    padding: 44px;
+
+#navbar li a {
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #088178;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+#hero {
+    font-size: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+.text {
+    width: 100%;
+    margin-top: 100px;
+}
+
+.imgs {
+    width: 100%;
+    margin-left: 40px;
+}
+
+.imgs img {
+    width: 100%;
+    height: 100%;
+}
+
+#hero h4 {
+    padding-bottom: 15px;
+}
+
+#hero h1 {
+    color: #088178;
+}
+
+#hero button {
+    background-color: #088178;
+    border-color: #088178;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 14px 80px 14px 65px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+
+#hero button:hover {
+    background-color: transparent;
+    color: #088178;
+}
+#feature{
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    flex-wrap: wrap;
+
+}
+#feature .fe-box{
+    font-size: 24px;
+    width: 180px;
+    text-align: center;
+    padding: 25px 15px;
+    box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+    border: 1px solid #cce7d0;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+#feature .fe-box img{
+    width: 100%;
+    margin-top: 10px;
+}
+#feature .fe-box:hover{
+    box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.2);
+}
+#feature .fe-box h6{
+    display: inline-block;
+    padding: 9px 8px 6px 8px;
+    line-height: 1;
+    border-radius: 4px;
+    color: #088178;
+    background-color: #fddde4;
+
+
 }
