@@ -1,0 +1,210 @@
+/* --- 1. About Page Header (Banner) ----------------------------------------------------- */
+#page-header.about-header {
+    background-image: url("../assets/image/about.png");
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* ឱ្យអក្សរនៅកណ្តាលផ្ដេក */
+    text-align: center;
+}
+
+#page-header.about-header h2 {
+    color: #fff;
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+#page-header.about-header p {
+    color: #fff;
+    font-size: 24px;
+    margin: 0;
+}
+
+
+
+/* --- 2. Who We Are Section ----------------------------------------------------------- */
+#about-head {
+    display: flex;
+    align-items: center;
+    /* ឱ្យរូបភាព និងអត្ថបទនៅកម្រិតស្មើគ្នាចំកណ្តាល */
+    justify-content: center;
+    padding: 80px 10%;
+    gap: 60px;
+}
+
+#about-head img {
+    width: 50%;
+    height: auto;
+    border-radius: 4px;
+}
+
+#about-head div {
+    width: 50%;
+}
+
+#about-head h2 {
+    color: #000;
+    /* ពណ៌ខ្មៅដិតដូចក្នុងរូបភាព */
+    font-size: 46px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+#about-head p {
+    color: #465b52;
+    /* ពណ៌ប្រផេះ مرដិតបន្តិច */
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* --- 3. Abbreviation & Marquee ----------------------------------------- */
+#about-head abbr {
+    color: rgb(128, 128, 209);
+    text-decoration: underline dotted;
+    text-underline-offset: 4px;
+    cursor: help;
+    font-weight: bold;
+}
+
+#about-head marquee {
+    background-color: #beb8b8;
+    /* ពណ៌ប្រផេះស្រាលដូចក្នុងរូបភាព */
+    color: yellow;
+    padding: 12px;
+    margin-top: 25px;
+    font-weight: 500;
+    width: 100%;
+    border-radius: 2px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+.our-mission {
+    padding: 80px 0;
+}
+
+.mission {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-mission {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about-mission h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+
+}
+
+.about-mission h2::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: #007bff;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about-mission p {
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Grid Layout */
+.miision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* Box Styles */
+.box {
+    background: #fff;
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.box:hover {
+    transform: translateY(-10px);
+    background: #007bff;
+    color: #fff;
+}
+
+.box .icon {
+    font-size: 40px;
+    color: #007bff;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.box:hover .icon,
+.box:hover h3,
+.box:hover p {
+    color: #fff;
+}
+
+.box h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.box p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 25px;
+
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+.box:hover .btn {
+    background: #fff;
+    color: #007bff;
+}
+
+/* Media Query for Responsiveness */
+@media (max-width: 768px) {
+    .about-missionh2 {
+        font-size: 28px;
+    }
+}
