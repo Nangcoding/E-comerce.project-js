@@ -5,23 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About page</title>
-    <link rel="stylesheet" href="/style/main.css">
     <link rel="stylesheet" href="../style/about.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
 
 <body>
     <!-- /* --- 1. About Page Header (Banner) ----------------------------------------------------- */ -->
-    <header class="head">
-        <img class="img" src="/assets/image/logo.png" alt="">
-        <nav class="navbar">
-            <a href="/index.html">Home</a>
-            <a href="./shop.html">Shop</a>
-            <a href="./blog.html">Blog</a>
-            <a href="./about.html">About</a>
-            <a href="./contact.html">Contact Us</a>
-
-        </nav>
+    <section id="header">
+        <a href="#"><img class="logo" src="/assets/image/logo.png" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="/index.html">Home</a></li>
+                <li><a href="./shop.html">Shop</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </section>
 
     </header>
     <section id="page-header" class="about-header">
@@ -55,59 +58,109 @@
         </div>
     </section>
 
+
     <!-- /* --- 4 Our Mission ----------------------------------------- */ -->
-    <section class="our-mission">
-        <div class="mission">
-            <div class="about-mission">
-                <h2>Our Mission</h2>
-                <p>Our mission is to deliver trustworthy, high-quality computers with excellence and reliability for
-                    every customer.</p>
+    <section class="our-mission" id="mission-section">
+        <div class="mission" id="mission-container">
+
+            <div class="about-mission" id="mission-header">
+                <h2 id="main-title">Our <span id="title-accent">Mission</span></h2>
+                <p id="mission-description">
+                    Our mission is to deliver trustworthy, high-quality computers with excellence and reliability for
+                    every customer.
+                </p>
             </div>
-            <div class="mission-grid">
-                <div class="box">
-                    <div class="icon"><i class="fa-solid fa-code"></i></div>
-                    <h3>Trust</h3>
-                    <p>We build trust with our customers by providing honest and reliable products and services,
-                        ensuring every purchase is safe and dependable.</p>
-                    <a href="#" class="btn">Read More</a>
+
+            <div class="mission-grid" id="mission-items-grid">
+
+                <div class="box" id="card-trust">
+                    <div class="icon" id="icon-trust"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3 id="heading-trust">Trust</h3>
+                    <p id="text-trust">We build trust with our customers by providing honest and reliable products and
+                        services.</p>
+                    <a href="#" class="btn" id="btn-trust">Read More</a>
                 </div>
-                <div class="box">
-                    <div class="icon"><i class="fa-solid fa-code"></i></div>
-                    <h3>Quality</h3>
-                    <p>We prioritize quality by offering high-performance computers and accessories that meet the
-                        highest standards, ensuring customer satisfaction and long-lasting use.</p>
-                    <a href="#" class="btn">Read More</a>
+
+                <div class="box" id="card-quality">
+                    <div class="icon" id="icon-quality"><i class="fa-solid fa-gem"></i></div>
+                    <h3 id="heading-quality">Quality</h3>
+                    <p id="text-quality">We prioritize quality by offering high-performance computers that meet the
+                        highest standards.</p>
+                    <a href="#" class="btn" id="btn-quality">Read More</a>
                 </div>
-                <div class="box">
-                    <div class="icon"><i class="fa-solid fa-code"></i></div>
-                    <h3>Reliability</h3>
-                    <p>We focus on reliability by making sure every product and service works as promised, and by
-                        maintaining consistent delivery and support.</p>
-                    <a href="#" class="btn">Read More</a>
+
+                <div class="box" id="card-reliability">
+                    <div class="icon" id="icon-reliability"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3 id="heading-reliability">Reliability</h3>
+                    <p id="text-reliability">We focus on reliability by making sure every product works as promised
+                        consistently.</p>
+                    <a href="#" class="btn" id="btn-reliability">Read More</a>
                 </div>
-                <div class="box">
-                    <div class="icon"><i class="fa-solid fa-code"></i></div>
-                    <h3>Excellence</h3>
-                    <p>We strive for excellence by delivering superior products, expert guidance, and exceptional
-                        customer service, always aiming to exceed expectations.</p>
-                    <a href="#" class="btn">Read More</a>
+
+                <div class="box" id="card-excellence">
+                    <div class="icon" id="icon-excellence"><i class="fa-solid fa-award"></i></div>
+                    <h3 id="heading-excellence">Excellence</h3>
+                    <p id="text-excellence">We strive for excellence by delivering superior products and exceptional
+                        service.</p>
+                    <a href="#" class="btn" id="btn-excellence">Read More</a>
                 </div>
+
             </div>
         </div>
     </section>
 
- <section id="header">
-        <a href="#"><img class="logo" src="/assets/image/logo.png" alt=""></a>
-        <div>
-            <ul id="navbar">
-               <li><a class="active" href="/index.html">Home</a></li>
-                <li><a href="./shop.html">Shop</a></li>
-                <li><a href="./blog.html">Blog</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-            </ul>
+    <!-- /* --- 5.Our Team ----------------------------------------- */ -->
+
+    <section id="team-section-container" class="team-wrapper">
+        <div id="team-header-box" class="section-title-center">
+            <h2 id="team-main-heading">Meet Our <span id="team-accent">Team</span></h2>
+            <p id="team-subtext">The professionals behind our success</p>
+        </div>
+
+        <div id="team-cards-flexbox" class="team-grid-layout">
+
+            <div id="member-card-01" class="profile-card">
+                <div id="image-holder-01" class="profile-img-box">
+                    <img id="img-01" src="../assets/about/boyprofile.png" alt="Sim Somnang">
+                </div>
+                <h3 id="name-id-01" class="profile-name">Sim Somnang</h3>
+                <p id="role-id-01" class="profile-role">Project Manager</p>
+                <div id="social-box-01" class="profile-socials">
+                    <a id="link-fb-01" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a id="link-tw-01" href="#"><i class="fab fa-twitter"></i></a>
+                    <a id="link-ig-01" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div id="member-card-02" class="profile-card">
+                <div id="image-holder-02" class="profile-img-box">
+                    <img id="img-02" src="../assets/about/yang.png" alt="Lakk Sokyang">
+                </div>
+                <h3 id="name-id-02" class="profile-name">Lakk Sokyang</h3>
+                <p id="role-id-02" class="profile-role">Web Developer</p>
+                <div id="social-box-02" class="profile-socials">
+                    <a id="link-fb-02" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a id="link-tw-02" href="#"><i class="fab fa-twitter"></i></a>
+                    <a id="link-ig-02" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div id="member-card-03" class="profile-card">
+                <div id="image-holder-03" class="profile-img-box">
+                    <img id="img-03" src="../assets/about/Ya.png" alt="Phon Ya">
+                </div>
+                <h3 id="name-id-03" class="profile-name">Phorn Ya</h3>
+                <p id="role-id-03" class="profile-role">Web Developer</p>
+                <div id="social-box-03" class="profile-socials">
+                    <a id="link-fb-03" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a id="link-tw-03" href="#"><i class="fab fa-twitter"></i></a>
+                    <a id="link-ig-03" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
         </div>
     </section>
+
 </body>
 
 </html>

@@ -1,3 +1,61 @@
+.logo {
+    width: 140px;
+    height: 140px;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+    background-color: #e3e6f3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 100;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+#navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #088178;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+
+
+
 /* --- 1. About Page Header (Banner) ----------------------------------------------------- */
 #page-header.about-header {
     background-image: url("../assets/image/about.png");
@@ -9,7 +67,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* ឱ្យអក្សរនៅកណ្តាលផ្ដេក */
     text-align: center;
 }
 
@@ -31,36 +88,64 @@
 #about-head {
     display: flex;
     align-items: center;
-    /* ឱ្យរូបភាព និងអត្ថបទនៅកម្រិតស្មើគ្នាចំកណ្តាល */
     justify-content: center;
-    padding: 80px 10%;
-    gap: 60px;
+    padding: 40px 10% 80px 10%;
+    gap: 40px;
 }
 
 #about-head img {
-    width: 50%;
+    width: 65%;
     height: auto;
     border-radius: 4px;
 }
 
 #about-head div {
     width: 50%;
+
 }
+
 
 #about-head h2 {
     color: #000;
-    /* ពណ៌ខ្មៅដិតដូចក្នុងរូបភាព */
-    font-size: 46px;
+    font-size: 32px;
     font-weight: 700;
+    margin-top: 0;
     margin-bottom: 15px;
 }
 
 #about-head p {
     color: #465b52;
-    /* ពណ៌ប្រផេះ مرដិតបន្តិច */
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 15px;
     margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* --- Abbreviation & Marquee --- */
+#about-head abbr {
+    color: rgb(128, 128, 209);
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#about-head marquee {
+    background-color: #f1f1f1;
+    color: #d0b200;
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+@media (max-width: 799px) {
+    #about-head {
+        flex-direction: column;
+        padding: 40px 5%;
+    }
+
+    #about-head img,
+    #about-head div {
+        width: 100%;
+    }
 }
 
 /* --- 3. Abbreviation & Marquee ----------------------------------------- */
@@ -74,137 +159,238 @@
 
 #about-head marquee {
     background-color: #beb8b8;
-    /* ពណ៌ប្រផេះស្រាលដូចក្នុងរូបភាព */
     color: yellow;
-    padding: 12px;
-    margin-top: 25px;
+    padding: 10px;
+    margin-top: 15px;
     font-weight: 500;
     width: 100%;
     border-radius: 2px;
 }
 
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
 
-body {
+/* /<!-- /* --- 4 Our Mission ----------------------------------------- */
+
+#mission-section.our-mission {
+    padding: 60px 0;
     background-color: #f4f4f4;
 }
 
-.our-mission {
-    padding: 80px 0;
-}
-
-.mission {
+#mission-container.mission {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.about-mission {
+#mission-header.about-mission {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
-.about-mission h2 {
-    font-size: 36px;
-    color: #333;
-    margin-bottom: 15px;
-    position: relative;
-    display: inline-block;
-
-}
-
-.about-mission h2::after {
-    content: '';
-    width: 50px;
-    height: 3px;
-    background: #007bff;
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.about-mission p {
-    color: #666;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* Grid Layout */
-.miision-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-/* Box Styles */
+/* Base style for all boxes */
 .box {
     background: #fff;
-    padding: 40px 30px;
+    padding: 50px 30px;
     text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, background 0.3s ease;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.box:hover {
-    transform: translateY(-10px);
+/* --- Specific Targeting (Using IDs) --- */
+
+#main-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #222;
+}
+
+#title-accent {
+    border-bottom: 4px solid #007bff;
+    padding-bottom: 5px;
+}
+
+#mission-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* Card Hover Effects */
+#card-trust:hover,
+#card-quality:hover,
+#card-reliability:hover,
+#card-excellence:hover {
     background: #007bff;
-    color: #fff;
+    transform: translateY(-10px);
 }
 
-.box .icon {
-    font-size: 40px;
-    color: #007bff;
-    margin-bottom: 20px;
-    transition: color 0.3s ease;
-}
-
-.box:hover .icon,
+/* White text on hover */
 .box:hover h3,
-.box:hover p {
+.box:hover p,
+.box:hover .icon {
     color: #fff;
 }
 
-.box h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    color: #333;
-}
-
-.box p {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #666;
-    margin-bottom: 25px;
-
-}
-
-/* Button Styles */
-.btn {
+/* Button styles using ID list */
+#btn-trust,
+#btn-quality,
+#btn-reliability,
+#btn-excellence {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px 25px;
     background: #007bff;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    font-weight: 500;
-    transition: background 0.3s ease;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
+
+/* Button change on hover */
 .box:hover .btn {
     background: #fff;
     color: #007bff;
 }
 
-/* Media Query for Responsiveness */
+/* Unique Icon IDs */
+#icon-trust,
+#icon-quality,
+#icon-reliability,
+#icon-excellence {
+    font-size: 45px;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* <!-- /* --- 5.Our team ----------------------------------------- */
+
+
+#team-section-container {
+    background-color: #ffffff;
+    /* padding: 80px 5%; */
+    text-align: center;
+}
+
+#team-cards-flexbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.profile-card {
+    background-color: #1a1e29;
+    width: 320px;
+    padding: 50px 20px;
+    border-radius: 20px;
+    color: #ffffff;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* cursor: pointer; */
+    /* z-index: 1; */
+}
+
+
+
+/* កាតទី១: Hover ចេញពន្លឺខៀវ */
+#member-card-01:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px rgba(0, 102, 255, 0.6);
+    border: 1px solid rgba(0, 102, 255, 0.5);
+}
+
+
+#member-card-02:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px rgba(8, 129, 120, 0.6);
+    border: 1px solid rgba(8, 129, 120, 0.5);
+}
+
+
+#member-card-03:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px rgba(255, 0, 150, 0.6);
+    border: 1px solid rgba(255, 0, 150, 0.5);
+}
+
+
+
+#member-card-01::before {
+    /* top: -50px; */
+    /* left: -50px;
+    width: 150px; */
+    height: 150px;
+    background: radial-gradient(circle, rgba(0, 102, 255, 0.3) 0%, transparent 70%);
+    /* z-index: -1;
+    opacity: 0;
+    transition: 0.4s; */
+}
+
+#member-card-03::after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255, 0, 150, 0.3) 0%, transparent 70%);
+
+}
+
+.profile-img-box {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    border: 6px solid #0f1118;
+    overflow: hidden;
+    background-color: #0f1118;
+}
+
+.profile-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+
+.profile-card:hover .profile-img-box img {
+    transform: scale(1.1);
+}
+
+.profile-name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.profile-role {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-bottom: 25px;
+}
+
+/* Social Icons */
+.profile-socials a {
+    color: #ffffff;
+    margin: 0 8px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.profile-socials a:hover {
+    color: #088178;
+}
+
 @media (max-width: 768px) {
-    .about-missionh2 {
-        font-size: 28px;
+    #team-cards-flexbox {
+        flex-direction: column;
+        align-items: center;
     }
 }
