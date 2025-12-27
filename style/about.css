@@ -95,6 +95,13 @@
 
 #about-head img {
     width: 65%;
+    justify-content: center;
+    padding: 80px 10%;
+    gap: 60px;
+}
+
+#about-head img {
+    width: 50%;
     height: auto;
     border-radius: 4px;
 }
@@ -110,6 +117,12 @@
     font-size: 32px;
     font-weight: 700;
     margin-top: 0;
+}
+
+#about-head h2 {
+    color: #000;
+    font-size: 46px;
+    font-weight: 700;
     margin-bottom: 15px;
 }
 
@@ -145,7 +158,12 @@
     #about-head img,
     #about-head div {
         width: 100%;
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 15px;
     }
+
+
 }
 
 /* --- 3. Abbreviation & Marquee ----------------------------------------- */
@@ -297,7 +315,6 @@
 
 
 
-/* កាតទី១: Hover ចេញពន្លឺខៀវ */
 #member-card-01:hover {
     transform: translateY(-8px);
     box-shadow: 0 0 30px rgba(0, 102, 255, 0.6);
@@ -392,5 +409,12 @@
     #team-cards-flexbox {
         flex-direction: column;
         align-items: center;
+        color: yellow;
+        padding: 12px;
+        margin-top: 25px;
+        font-weight: 500;
+        width: 100%;
+        border-radius: 2px;
     }
+
 }
