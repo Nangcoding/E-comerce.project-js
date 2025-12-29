@@ -89,74 +89,135 @@
 }
 
 /* --- Form & People Section --- */
+:root {
+    --primary-color: #088176;
+    --primary-hover: #066a61;
+    --text-main: #222;
+    --text-muted: #8d8d8d;
+    --bg-light: #f9f9f9;
+    --border-color: #e1e1e1;
+    --shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
 #form-details {
     display: flex;
     justify-content: space-between;
-    margin: 30px;
-    padding: 80px;
-    border: 1px solid #e1e1e1;
+    margin: 40px;
+    padding: 60px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: var(--shadow);
 }
 
+/* --- Form Section --- */
 #form-details form {
-    width: 65%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
+#form-details form span {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+}
+
+#form-details form h2 {
+    font-size: 26px;
+    line-height: 35px;
+    padding: 20px 0;
+}
+
 #form-details form input,
 #form-details form textarea {
     width: 100%;
-    padding: 12px 15px;
+    padding: 15px 20px;
     outline: none;
     margin-bottom: 20px;
-    border: 1px solid #e1e1e1;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-light);
+    font-family: inherit;
+    transition: 0.3s ease;
+}
+
+/* Interaction: Focus state */
+#form-details form input:focus,
+#form-details form textarea:focus {
+    border-color: var(--primary-color);
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(8, 129, 118, 0.1);
 }
 
 #form-details form button {
-    background-color: #088176;
+    background-color: var(--primary-color);
     color: #fff;
-    padding: 14px 30px;
+    padding: 14px 40px;
     border: none;
+    border-radius: 6px;
+    font-weight: 600;
     cursor: pointer;
     transition: 0.3s;
 }
 
 #form-details form button:hover {
-    background-color: #066a61;
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
 }
 
-/* --- People Styling --- */
+/* --- People Section --- */
 #form-details .people {
-    width: 30%;
-    /* Gives the people section its own column */
+    width: 35%;
 }
 
 #form-details .people div {
-    padding-bottom: 25px;
+    padding-bottom: 30px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    /* Better alignment for avatar */
 }
 
 #form-details .people div img {
-    width: 65px;
-    height: 65px;
+    width: 70px;
+    height: 70px;
     object-fit: cover;
-    margin-right: 15px;
-    border-radius: 5px;
-    /* Added slight rounding */
+    margin-right: 20px;
+    border-radius: 50%;
+    /* Circular avatars look more modern */
+    border: 2px solid var(--border-color);
 }
 
 #form-details .people div p {
     margin: 0;
-    font-size: 13px;
-    line-height: 25px;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--text-muted);
 }
 
 #form-details .people div p span {
     display: block;
-    font-size: 16px;
-    font-weight: 600;
-    color: black;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 2px;
 }
 
+/* Mobile Responsive */
+@media (max-width: 991px) {
+    #form-details {
+        flex-direction: column;
+        padding: 40px;
+    }
+
+    #form-details form,
+    #form-details .people {
+        width: 100%;
+    }
+
+    #form-details .people {
+        margin-top: 50px;
+    }
+}
