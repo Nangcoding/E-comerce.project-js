@@ -124,13 +124,14 @@ body {
 
 #hero {
     box-sizing: border-box;
-    width: 100%; 
-    padding:40px 80px;
+    width: 100%;
+    padding: 40px 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: linear-gradient(to right, #ffecd2, #fcb69f);
 }
+
 #hero .text {
     margin-top: -60px;
 }
@@ -371,7 +372,7 @@ body {
     align-items: center;
     text-align: center;
     background-image: url("/assets/home/back.png");
-    width: 600px;
+    width: 100%;
     height: 50vh;
     background-size: cover;
     background-position: center;
@@ -442,15 +443,17 @@ body {
     background-color: transparent;
     color: #088178;
 }
-#feature{
+
+#feature {
     gap: 20px;
     display: flex;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
     flex-wrap: wrap;
 
 }
-#feature .fe-box{
+
+#feature .fe-box {
     font-size: 24px;
     width: 180px;
     text-align: center;
@@ -461,14 +464,16 @@ body {
     margin: 15px 0;
 }
 
-#feature .fe-box img{
+#feature .fe-box img {
     width: 100%;
     margin-top: 10px;
 }
-#feature .fe-box:hover{
+
+#feature .fe-box:hover {
     box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.2);
 }
-#feature .fe-box h6{
+
+#feature .fe-box h6 {
     display: inline-block;
     padding: 9px 8px 6px 8px;
     line-height: 1;
@@ -477,12 +482,9 @@ body {
     background-color: #fddde4;
 
 }
+
 #sm-banner .banner-box2 {
     background-image: url("/assets/home/back2.png");
-}
-
-.banner-box {
-    line-height: 0.5;
 }
 
 .banner-box h4 {
@@ -516,10 +518,10 @@ body {
 
 #banner3 {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     text-align: center;
-    gap: 40px;
+    gap: 20px;
 }
 
 #banner3 .banner-box {
@@ -687,18 +689,22 @@ body {
         margin: 15px;
     }
 
-    #banner {
-        height: 20vh;
-
-    }
-
-    #sm-banner .banner-box {
-        width: 100%;
-        height: 30vh;
-    }
-
     #banner3 {
-        padding: 0 40px;
+        justify-content: center;
+    }
+
+    #banner3 .banner-box {
+        width: 100%;
+        height: 25vh;
+    }
+
+    #hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .imgs {
+        margin-left: 0;
     }
 }
 
@@ -751,136 +757,209 @@ body {
     cursor: pointer;
 }
 
-/* shop page  */
 
-/* ===== Reset ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+/* ShopEasy Footer Styles */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #f39c12;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --text-color: #333;
+    --text-light: #7f8c8d;
 }
 
-/* ===== Body ===== */
-body {
-    background-color: #f5f5f5;
-    color: #333;
+/* Footer Container */
+footer {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 3rem 0 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* ===== Navbar ===== */
-header {
-    background-color: #111;
-    padding: 15px 0;
+/* Headings */
+footer h4,
+footer h5 {
+    color: white;
+    font-weight: 600;
 }
 
-.navbar {
-    width: 90%;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+footer h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-.logo {
-    color: #fff;
-    font-size: 22px;
+footer h4 i {
+    color: var(--accent-color);
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
+footer h5 {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
 }
 
-.nav-links li {
-    margin-left: 20px;
+footer h5::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--accent-color);
 }
 
-.nav-links a {
-    color: #fff;
+/* Text and Paragraphs */
+footer p {
+    color: #bdc3c7;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Quick Links and Customer Service Sections */
+.footer-links p {
+    margin-bottom: 0.6rem;
+}
+
+.footer-links a {
+    color: #bdc3c7;
     text-decoration: none;
-    font-size: 16px;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: #ff9800;
+.footer-links a:hover {
+    color: white;
+    padding-left: 5px;
 }
 
-/* ===== Shop Section ===== */
-.shop {
-    width: 90%;
-    margin: 40px auto;
-}
-
-.shop h1 {
+/* Social Media Icons */
+footer .social-icons a {
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
     text-align: center;
-    margin-bottom: 30px;
-    font-size: 32px;
+    line-height: 38px;
+    margin-right: 10px;
+    transition: all 0.3s ease;
 }
 
-/* ===== Product Grid ===== */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-}
-
-/* ===== Product Card ===== */
-.product-card {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.product-card:hover {
+footer .social-icons a:hover {
+    background-color: var(--accent-color);
     transform: translateY(-5px);
 }
 
-/* ===== Product Image ===== */
-.product-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 5px;
+/* Newsletter Form */
+footer .input-group {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 0.5rem;
 }
 
-/* ===== Product Title ===== */
-.product-card h3 {
-    margin: 15px 0 10px;
-    font-size: 18px;
-}
-
-/* ===== Price ===== */
-.price {
-    color: #ff5722;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-/* ===== Button ===== */
-.product-card button {
-    background-color: #ff9800;
+footer .input-group input {
     border: none;
-    padding: 10px 15px;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 14px;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--text-color);
 }
 
-.product-card button:hover {
-    background-color: #e68900;
+footer .input-group input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(243, 156, 18, 0.3);
 }
 
-/* ===== Footer ===== */
-footer {
-    background-color: #111;
-    color: #fff;
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 40px;
+footer .input-group button {
+    background-color: var(--accent-color);
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    transition: background-color 0.3s ease;
 }
+
+footer .input-group button:hover {
+    background-color: #e67e22;
+}
+
+/* Divider Line */
+footer hr {
+    border-color: rgba(255, 255, 255, 0.1);
+    margin: 2rem 0;
+    opacity: 0.5;
+}
+
+/* Copyright Section */
+footer .copyright p {
+    color: #95a5a6;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+footer .copyright .text-danger {
+    color: #e74c3c !important;
+}
+
+/* Animation for the heart icon */
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+footer .fa-heart {
+    animation: heartbeat 1.5s infinite;
+    display: inline-block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    footer {
+        text-align: center;
+    }
+
+    footer h5::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    footer .social-icons {
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-links a:hover {
+        padding-left: 0;
+    }
+
+    footer .copyright .text-md-start,
+    footer .copyright .text-md-end {
+        text-align: center !important;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Additional spacing for better visual hierarchy */
+footer .mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+footer .mt-3 {
+    margin-top: 1rem !important;
+}
+
+footer .mt-4 {
+    margin-top: 1.5rem !important;
+}
+
