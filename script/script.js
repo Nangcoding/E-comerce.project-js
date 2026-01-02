@@ -1,19 +1,21 @@
 // MOBILE MENU
 const bar = document.getElementById("bar");
 const nav = document.getElementById("navbar");
-const close = document.getElementById("close");
 
-if (bar) bar.onclick = () => nav.classList.add("active");
-if (close) close.onclick = () => nav.classList.remove("active");
+if (bar) {
+    bar.addEventListener("click", () => nav.classList.add("active"));
+}
 
 // REGISTER MODAL
 const modal = document.getElementById("registerModal");
 const openBtn = document.getElementById("openRegister");
-const closeBtn = modal?.querySelector(".close");
+const closeBtn = modal ? modal.querySelector(".close") : null;
 
-if (openBtn) openBtn.onclick = () => modal.style.display = "block";
-if (closeBtn) closeBtn.onclick = () => modal.style.display = "none";
-window.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+if (openBtn) openBtn.addEventListener("click", () => modal.style.display = "block");
+if (closeBtn) closeBtn.addEventListener("click", () => modal.style.display = "none");
+window.addEventListener("click", (e) => {
+    if (e.target === modal) modal.style.display = "none";
+});
 
 // CART SYSTEM (LOCAL STORAGE)
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -34,7 +36,7 @@ addToCartButtons.forEach(btn => {
         e.preventDefault();
 
         const product = {
-            id: this.dataset.id,
+            id: Number(this.dataset.id), 
             name: this.dataset.name,
             price: Number(this.dataset.price),
             image: this.dataset.image,
@@ -55,6 +57,7 @@ addToCartButtons.forEach(btn => {
     });
 });
 
+// SHOW NOTIFICATION
 function showNotification(message) {
     const note = document.createElement("div");
     note.textContent = message;
@@ -67,11 +70,13 @@ function showNotification(message) {
         padding: 12px 18px;
         border-radius: 6px;
         z-index: 9999;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        font-weight: bold;
     `;
     document.body.appendChild(note);
 
     setTimeout(() => note.remove(), 2000);
 }
 
+// INITIALIZE
 updateCartCount();
-
