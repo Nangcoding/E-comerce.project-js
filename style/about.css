@@ -284,13 +284,12 @@
     margin-bottom: 20px;
 }
 
-/* <!-- /* --- 5.Our team ----------------------------------------- */
-
-
+/* 5. Our Team ----------------------------------------- */
 #team-section-container {
     background-color: #ffffff;
-    /* padding: 80px 5%; */
     text-align: center;
+    padding: 80px 5%;
+    /* Added padding for better spacing */
 }
 
 #team-cards-flexbox {
@@ -304,16 +303,19 @@
 .profile-card {
     background-color: #1a1e29;
     width: 320px;
-    padding: 50px 20px;
+    padding: 70px 20px 50px 20px;
+    /* Increased top and bottom padding to make card taller */
     border-radius: 20px;
     color: #ffffff;
     position: relative;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    /* cursor: pointer; */
-    /* z-index: 1; */
+    min-height: 420px;
+    /* Added minimum height to ensure consistent card size */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Content starts from top */
 }
-
-
 
 #member-card-01:hover {
     transform: translateY(-8px);
@@ -321,13 +323,11 @@
     border: 1px solid rgba(0, 102, 255, 0.5);
 }
 
-
 #member-card-02:hover {
     transform: translateY(-8px);
     box-shadow: 0 0 30px rgba(8, 129, 120, 0.6);
     border: 1px solid rgba(8, 129, 120, 0.5);
 }
-
 
 #member-card-03:hover {
     transform: translateY(-8px);
@@ -335,17 +335,9 @@
     border: 1px solid rgba(255, 0, 150, 0.5);
 }
 
-
-
 #member-card-01::before {
-    /* top: -50px; */
-    /* left: -50px;
-    width: 150px; */
     height: 150px;
     background: radial-gradient(circle, rgba(0, 102, 255, 0.3) 0%, transparent 70%);
-    /* z-index: -1;
-    opacity: 0;
-    transition: 0.4s; */
 }
 
 #member-card-03::after {
@@ -356,13 +348,13 @@
     width: 150px;
     height: 150px;
     background: radial-gradient(circle, rgba(255, 0, 150, 0.3) 0%, transparent 70%);
-
 }
 
 .profile-img-box {
     width: 150px;
     height: 150px;
-    margin: 0 auto 25px;
+    margin: 0 auto 30px;
+    /* Increased bottom margin to push image higher */
     border-radius: 50%;
     border: 6px solid #0f1118;
     overflow: hidden;
@@ -376,7 +368,6 @@
     transition: 0.5s;
 }
 
-
 .profile-card:hover .profile-img-box img {
     transform: scale(1.1);
 }
@@ -384,16 +375,23 @@
 .profile-name {
     font-size: 22px;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .profile-role {
     font-size: 14px;
     color: #94a3b8;
     margin-bottom: 25px;
+    flex-grow: 1;
+    /* Allows role to take up available space, pushing social icons down */
 }
 
 /* Social Icons */
+.profile-socials {
+    margin-top: 20px;
+    /* Added margin to push social icons further down */
+}
+
 .profile-socials a {
     color: #ffffff;
     margin: 0 8px;
@@ -403,6 +401,213 @@
 
 .profile-socials a:hover {
     color: #088178;
+}
+
+
+/* --------------------------6.footer ---------------------- */
+/* ShopEasy Footer Styles */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #f39c12;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --text-color: #333;
+    --text-light: #7f8c8d;
+}
+
+/* Footer Container */
+footer {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 3rem 0 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Headings */
+footer h4,
+footer h5 {
+    color: white;
+    font-weight: 600;
+}
+
+footer h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+footer h4 i {
+    color: var(--accent-color);
+}
+
+footer h5 {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+footer h5::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+/* Text and Paragraphs */
+footer p {
+    color: #bdc3c7;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Quick Links and Customer Service Sections */
+.footer-links p {
+    margin-bottom: 0.6rem;
+}
+
+.footer-links a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: white;
+    padding-left: 5px;
+}
+
+/* Social Media Icons */
+footer .social-icons a {
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 38px;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+/* Newsletter Form */
+footer .input-group {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+footer .input-group input {
+    border: none;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+footer .input-group input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(243, 156, 18, 0.3);
+}
+
+footer .input-group button {
+    background-color: var(--accent-color);
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    transition: background-color 0.3s ease;
+}
+
+footer .input-group button:hover {
+    background-color: #e67e22;
+}
+
+/* Divider Line */
+footer hr {
+    border-color: rgba(255, 255, 255, 0.1);
+    margin: 2rem 0;
+    opacity: 0.5;
+}
+
+/* Copyright Section */
+footer .copyright p {
+    color: #95a5a6;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+footer .copyright .text-danger {
+    color: #e74c3c !important;
+}
+
+/* Animation for the heart icon */
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+footer .fa-heart {
+    animation: heartbeat 1.5s infinite;
+    display: inline-block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    footer {
+        text-align: center;
+    }
+
+    footer h5::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    footer .social-icons {
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-links a:hover {
+        padding-left: 0;
+    }
+
+    footer .copyright .text-md-start,
+    footer .copyright .text-md-end {
+        text-align: center !important;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Additional spacing for better visual hierarchy */
+footer .mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+footer .mt-3 {
+    margin-top: 1rem !important;
+}
+
+footer .mt-4 {
+    margin-top: 1.5rem !important;
 }
 
 @media (max-width: 768px) {
