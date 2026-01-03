@@ -1,0 +1,52 @@
+.hero {
+    min-height: 50vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center;
+}
+
+.product-card {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cart-item,
+.order-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#cart-badge,
+#wishlist-badge {
+    font-size: 0.75rem;
+    vertical-align: top;
+}
+
+.star-rating {
+    color: #ffc107;
+}
+
+.review {
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 40vh;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
