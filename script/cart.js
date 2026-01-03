@@ -1,35 +1,68 @@
+// ===== LOAD CART =====
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 const cartItems = document.getElementById("cart-items");
 const cartTotal = document.getElementById("cart-total");
 const cartCount = document.getElementById("cart-count");
 
+// ===== ADD TO CART (COMBINED LOGIC) =====
+function addToCart(product) {
+    const existingItem = cart.find(item => item.name === product.name);
+
+    if (existingItem) {
+        existingItem.quantity += 1; // ✅ increase quantity
+    } else {
+        cart.push({
+            name: product.name,
+            price: Number(product.price),
+            image: product.image,
+            quantity: 1
+        });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    displayCart();
+}
+
 // ===== UPDATE CART COUNT =====
 function updateCartCount() {
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    cartCount.textContent = totalItems;
+    const totalItems = cart.reduce((sum, item) => {
+        return sum + (Number(item.quantity) || 0);
+    }, 0);
+
+    if (cartCount) {
+        cartCount.textContent = totalItems;
+    }
 }
 
 // ===== DISPLAY CART =====
 function displayCart() {
+    if (!cartItems) return;
+
     cartItems.innerHTML = "";
     let total = 0;
 
     cart.forEach((item, index) => {
-        const itemTotal = item.price * item.quantity;
+        const name = item.name || "Unknown Product";
+        const price = Number(item.price) || 0;
+        const quantity = Number(item.quantity) || 1;
+        const image = item.image || "https://via.placeholder.com/70";
+
+        const itemTotal = price * quantity;
         total += itemTotal;
 
         cartItems.innerHTML += `
             <tr>
                 <td>
-                    <i class="fa-solid fa-trash" onclick="removeItem(${index})"></i>
+                    <i class="fa-solid fa-trash" style="cursor:pointer"
+                       onclick="removeItem(${index})"></i>
                 </td>
-                <td><img src="${item.image}" width="70"></td>
-                <td>${item.name}</td>
-                <td>$${item.price}</td>
+                <td><img src="${image}" width="70"></td>
+                <td>${name}</td>
+                <td>$${price}</td>
                 <td>
                     <button onclick="changeQty(${index}, -1)">-</button>
-                    ${item.quantity}
+                    ${quantity}
                     <button onclick="changeQty(${index}, 1)">+</button>
                 </td>
                 <td>$${itemTotal}</td>
@@ -37,14 +70,21 @@ function displayCart() {
         `;
     });
 
-    cartTotal.textContent = `$${total}`;
+    if (cartTotal) {
+        cartTotal.textContent = `$${total}`;
+    }
+
     localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("cartTotal", total);
+
     updateCartCount();
 }
 
 // ===== CHANGE QUANTITY =====
 function changeQty(index, change) {
-    cart[index].quantity += change;
+    if (!cart[index]) return;
+
+    cart[index].quantity = (Number(cart[index].quantity) || 1) + change;
 
     if (cart[index].quantity <= 0) {
         cart.splice(index, 1);
@@ -59,28 +99,20 @@ function removeItem(index) {
     displayCart();
 }
 
-// INIT
+// ===== INIT =====
 displayCart();
 
-// When updating total in cart page
-const cartTotalElement = document.getElementById('cart-total');
-localStorage.setItem('cartTotal', cartTotalElement.textContent.replace('$', ''));
+// ===== CHECKOUT BUTTON =====
+const checkoutBtn = document.getElementById("checkout-btn");
 
+if (checkoutBtn) {
+    checkoutBtn.addEventListener("click", () => {
+        const total = Number(localStorage.getItem("cartTotal")) || 0;
 
-// Get the button
-const checkoutBtn = document.getElementById('checkout-btn');
-
-
-checkoutBtn.addEventListener('click', () => {
-    // Get the total value, remove $ sign and convert to number
-    const total = parseFloat(cartTotalElement.textContent.replace('$', ''));
-
-    if (total > 0) {
-        // If cart has items, redirect to checkout page
-        window.location.href = '/template/checkout.html';
-    } else {
-        // If cart is empty, alert user
-        alert('Your cart is empty! Add items before proceeding.');
-    }
-});
-
+        if (total > 0) {
+            window.location.href = "/template/checkout.html";
+        } else {
+            alert("Your cart is empty! Add items before proceeding.");
+        }
+    });
+}
