@@ -35,7 +35,7 @@ const notyf = new Notyf({ duration: 3000, position: { x: 'right', y: 'top' } });
             { id: 32, name: "ASUS ROG Strix SCAR 16 (2025)", price: 560.99, category: "Asus", stock: 90, description: "High-end gaming laptop with top-tier performance and ROG Nebula HDR display..", image: "/assets/shop/a5.png", reviews: [{ user: "Jack", rating: 4, comment: "Spacious." }] },
             { id: 33, name: "ASUS ROG Zephyrus G14", price: 970.99, category: "Asus", stock: 90, description: "Larger gaming model with strong performance and advanced graphics.", image: "/assets/shop/a6.png", reviews: [{ user: "Jack", rating: 4, comment: "Spacious." }] },
             { id: 34, name: "ASUS ROG Zephyrus G16", price: 450.99, category: "Asus", stock: 90, description: "Flagship Android smartphone with powerful Snapdragon 8 Elite chip and advanced camera features.", image: "/assets/shop/a7.png", reviews: [{ user: "Jack", rating: 4, comment: "Spacious." }] },
-            { id: 35, name: "ASUS Zenfone 12 Ultra", price: 450.99, category: "Asus", stock: 90, description: "Classic Android tablets from ASUS’s earlier mobile lineup (good budget tablets).", reviews: [{ user: "Jack", rating: 4, comment: "Spacious." }] },
+            { id: 35, name: "ASUS Zenfone 12 Ultra", price: 450.99, category: "Asus", stock: 90, description: "Classic Android tablets from ASUS earlier mobile lineup (good budget tablets).",image: "/assets/shop/a8.png", reviews: [{ user: "Jack", rating: 4, comment: "Spacious." }] },
         ];
         
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
