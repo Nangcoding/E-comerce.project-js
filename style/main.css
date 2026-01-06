@@ -963,3 +963,168 @@ footer .mt-4 {
     margin-top: 1.5rem !important;
 }
 
+/* All responsive  tepblet */
+
+@media (max-width: 1024px) {
+
+    /* General spacing */
+    .section-p1 {
+        padding: 30px 40px;
+    }
+
+    /* Header */
+    #header {
+        padding: 0 40px;
+    }
+
+    /* Hero section */
+    #hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px;
+    }
+
+    .imgs {
+        margin-left: 0;
+        margin-top: 30px;
+    }
+
+    #hero .imgs img {
+        width: 80%;
+    }
+
+    /* Feature boxes */
+    #feature {
+        justify-content: center;
+        gap: 30px;
+    }
+
+    /* Products */
+    #product1 .pro-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    /* Banners */
+    #sm-banner {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #banner3 .banner-box {
+        width: 45%;
+    }
+
+    /* Newsletter */
+    #newsletters .form {
+        width: 70%;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    /* General spacing */
+    .section-p1 {
+        padding: 20px;
+    }
+
+    /* Header */
+    #header {
+        padding: 10px 20px;
+    }
+
+    .logo {
+        width: 100px;
+        height: auto;
+    }
+
+    /* Mobile menu */
+    #navbar {
+        flex-direction: column;
+    }
+
+    /* Hero */
+    #hero {
+        flex-direction: column;
+        padding: 20px;
+        height: auto;
+    }
+
+    #hero h1 {
+        font-size: 32px;
+    }
+
+    #hero h4 {
+        font-size: 18px;
+    }
+
+    #hero button {
+        padding: 12px 40px;
+        font-size: 14px;
+    }
+
+    .imgs img {
+        width: 100%;
+    }
+
+    /* Features */
+    #feature {
+        justify-content: center;
+    }
+
+    #feature .fe-box {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* Products */
+    #product1 .pro-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Banners */
+    #banner {
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    #banner h2 {
+        font-size: 22px;
+    }
+
+    #sm-banner .banner-box {
+        height: auto;
+    }
+
+    #banner3 .banner-box {
+        width: 100%;
+    }
+
+    /* Newsletter */
+    #newsletters {
+        margin: 20px;
+        text-align: center;
+    }
+
+    #newsletters .form {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    #newsletters input {
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+    #newsletters button {
+        border-radius: 4px;
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+    }
+}

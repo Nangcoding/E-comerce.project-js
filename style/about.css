@@ -149,23 +149,6 @@
     border-radius: 4px;
 }
 
-@media (max-width: 799px) {
-    #about-head {
-        flex-direction: column;
-        padding: 40px 5%;
-    }
-
-    #about-head img,
-    #about-head div {
-        width: 100%;
-        font-size: 16px;
-        line-height: 1.6;
-        margin-bottom: 15px;
-    }
-
-
-}
-
 /* --- 3. Abbreviation & Marquee ----------------------------------------- */
 #about-head abbr {
     color: rgb(128, 128, 209);
@@ -570,32 +553,6 @@ footer .fa-heart {
     display: inline-block;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    footer {
-        text-align: center;
-    }
-
-    footer h5::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    footer .social-icons {
-        justify-content: center;
-        margin-bottom: 1.5rem;
-    }
-
-    .footer-links a:hover {
-        padding-left: 0;
-    }
-
-    footer .copyright .text-md-start,
-    footer .copyright .text-md-end {
-        text-align: center !important;
-        margin-bottom: 0.5rem;
-    }
-}
 
 /* Additional spacing for better visual hierarchy */
 footer .mb-4 {
@@ -610,16 +567,216 @@ footer .mt-4 {
     margin-top: 1.5rem !important;
 }
 
-@media (max-width: 768px) {
+/* ================= TABLET (768px – 991px) ================= */
+@media (max-width: 991px) {
+
+    /* Header */
+    #header {
+        padding: 0 40px;
+    }
+
+    #navbar li {
+        padding: 0 15px;
+    }
+
+    /* About Page Header */
+    #page-header.about-header {
+        height: 30vh;
+    }
+
+    #page-header.about-header h2 {
+        font-size: 38px;
+    }
+
+    #page-header.about-header p {
+        font-size: 18px;
+    }
+
+    /* Who We Are Section */
+    #about-head {
+        flex-direction: column;
+        padding: 30px 5%;
+        gap: 25px;
+    }
+
+    #about-head img,
+    #about-head div {
+        width: 100%;
+    }
+
+    #about-head h2 {
+        font-size: 36px;
+    }
+
+    #about-head p {
+        font-size: 14px;
+    }
+
+    /* Mission Section */
+    #mission-items-grid {
+        gap: 20px;
+    }
+
+    .box {
+        padding: 30px 20px;
+    }
+
+    #main-title {
+        font-size: 36px;
+    }
+
+    /* Team Section */
+    #team-cards-flexbox {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .profile-card {
+        width: 280px;
+        padding: 50px 15px 40px 15px;
+        min-height: 380px;
+    }
+
+    .profile-img-box {
+        width: 130px;
+        height: 130px;
+    }
+
+    .profile-name {
+        font-size: 20px;
+    }
+
+    .profile-role {
+        font-size: 13px;
+    }
+}
+
+
+/* ================= MOBILE (≤ 576px) ================= */
+@media (max-width: 576px) {
+
+    /* Header */
+    #header {
+        padding: 0 20px;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #navbar {
+        flex-direction: column;
+    }
+
+    #navbar li {
+        padding: 10px 0;
+    }
+
+    /* Logo */
+    .logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* About Page Header */
+    #page-header.about-header {
+        height: 25vh;
+        padding: 10px;
+    }
+
+    #page-header.about-header h2 {
+        font-size: 28px;
+    }
+
+    #page-header.about-header p {
+        font-size: 14px;
+    }
+
+    /* Who We Are Section */
+    #about-head {
+        padding: 20px 5%;
+        gap: 20px;
+    }
+
+    #about-head h2 {
+        font-size: 28px;
+    }
+
+    #about-head p {
+        font-size: 13px;
+    }
+
+    /* Mission Section */
+    #mission-items-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .box {
+        padding: 25px 15px;
+    }
+
+    #main-title {
+        font-size: 28px;
+    }
+
+    /* Team Section */
     #team-cards-flexbox {
         flex-direction: column;
         align-items: center;
-        color: yellow;
-        padding: 12px;
-        margin-top: 25px;
-        font-weight: 500;
-        width: 100%;
-        border-radius: 2px;
     }
 
+    .profile-card {
+        width: 90%;
+        padding: 40px 15px 30px 15px;
+        min-height: 360px;
+    }
+
+    .profile-img-box {
+        width: 110px;
+        height: 110px;
+    }
+
+    .profile-name {
+        font-size: 18px;
+    }
+
+    .profile-role {
+        font-size: 12px;
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    footer h4 {
+        font-size: 1.3rem;
+    }
+
+    footer h5 {
+        font-size: 1rem;
+    }
+
+    footer h5::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    footer .social-icons {
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    footer .input-group {
+        flex-direction: column;
+    }
+
+    footer .input-group input,
+    footer .input-group button {
+        width: 100%;
+        margin-bottom: 8px;
+    }
 }
